@@ -727,7 +727,7 @@ $(function(){
    // 최근 검색어 목록 로드
    var popularwords=getpopularwords();
    if(popularwords.length != 0){//최근 검색어가 있다면 작동
-      for(const i in popularwords){
+      for(var i in popularwords){
          $('#search-recent ul').
          append('<li><span class="dot"></span><a href="#">'+popularwords[i]+
          '</a><button class="sp sp-close-box"></button></li>');
