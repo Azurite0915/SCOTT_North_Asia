@@ -504,7 +504,7 @@ $(function(){
       e.preventDefault();
       var address=$(this).find('.key-search-address').text();
       var place=$(this).find('.key-search-place').text();
-      $('.form-store input').val(`${address} ${place}`);
+      $('.form-store input').val(address+' '+place);
       $('#keyword-search-result li').remove();
    });
 
