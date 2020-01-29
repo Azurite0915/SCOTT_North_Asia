@@ -53,12 +53,12 @@
 .sp-play{width: 61px; height: 61px; background-position: -195px -220px;}
 
 
-body{
+/* body{
    position: relative;
    left: 0;
    transition: left 0.2s;
 }
-body.active{left: 320px;}
+body.active{left: 320px;} */
 
 
 
