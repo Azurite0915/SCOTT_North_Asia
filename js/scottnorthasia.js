@@ -531,7 +531,7 @@ $(function(){
       success:function(data){      
          district=data;        
          // console.log(data);
-         data.forEach(obj => {
+         data.forEach(function(obj){
             // console.log(Object.keys(obj)[0]);   
             $('#district-under').append('<option value="'+Object.keys(obj)[0]+'">'+Object.keys(obj)[0]+'</option>');   
          });
@@ -552,11 +552,11 @@ $(function(){
    $('#district-upper').change(function(){
       // console.log(district);
       var selectKey=$(this).val();      
-      district.forEach(obj => {
+      district.forEach(function(obj){
          var key=Object.keys(obj)[0];        
          if(selectKey==key){
             $('#district-result').empty();
-            obj[key].forEach(name => {               
+            obj[key].forEach(function(name){               
                $('#district-result').append('<option>'+name+'</option>')
             });
          }  
@@ -997,7 +997,7 @@ function keyWordSearch(el){
          if (status === kakao.maps.services.Status.OK) {
             // console.log(result);
             $('#keyword-search-result').empty();
-            result.forEach(el => {
+            result.forEach(function(el){
                $('#keyword-search-result').append(
                   '<li>'
                   +'<span class="key-search-address">'+el.address_name+'</span>'
