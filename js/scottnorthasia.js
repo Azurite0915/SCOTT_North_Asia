@@ -677,9 +677,9 @@ $(function(){
 
    /* 검색 팝업(document 내부) ========================================== */
    // 1. 검색창 여닫기
-   $('.sp-search-open').click(function(e){
+   $('#search-open').click(function(e){
       e.preventDefault();
-      $(this).toggleClass('sp-search-close');
+      $(this).find('i').toggleClass('sp-search-close sp-search-open');
       $('.popup-search, .form-search, .search-tab').toggleClass('open');
       $('.popup-search input').val('');
    });
