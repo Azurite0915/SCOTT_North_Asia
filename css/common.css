@@ -1523,7 +1523,7 @@ section > h2{display: none;}
    border: 2px solid #000;
    outline: none;
 }
-.store .select-group select:first-child{margin-right: 10px;}
+.store .select-group select#district-upper{margin-right: 10px;}
 .store .select-group select option{outline: none;}
 .store p{
    left: 50px; bottom: 60px;
