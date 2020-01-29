@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>SCOTT North Asia - Redesigned</title>
+   <link rel="shorcut icon" href="img/favicon.ico">
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/swiper.min.css">
+   <link rel="stylesheet" href="css/jquery.scrollbar.css">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/jquery.scrollbar.min.js"></script>
+   <script src="js/scottnorthasia.js"></script>
+</head>
+<body>
+   <!-- header -->
+   <header>
+      <div class="container">
+         <!-- SCOTT 로고 & 검색 버튼/핍업 -->
+         <h1>
+            <a href="#" class="sp sp-logo-main">
+               <span class="blind">스캇노스아시아</span>
+            </a>
+         </h1>
+         <button id="search-open"><i class="sp sp-search-open"></i></button>
+         <div class="popup-search">
+            <form class="form-search" onsubmit="search(); return false;">
+               <input type="text" placeholder="검색어를 입력하세요">
+               <button type="submit" class="sp sp-search-inner">
+                  <span class="blind">검색 시작</span>
+               </button>
+            </form>
+            <div class="search-tab">
+               <ul class="tab-nav">
+                  <li><a href="#search-recent" class="active">최근 검색어</a></li>
+                  <li><a href="#search-popular">인기 검색어</a></li>
+               </ul>
+               <div class="tab-contents">
+                  <div id="search-recent" style="display: block;">
+                     <div class="scrollbar-rail">
+                        <ul></ul>
+                     </div>
+                     <!-- 리스트의 수가 0이면 아래의 메시지를 생성 -->
+                     <!-- <p>최근 검색어가 없습니다.</p> -->
+                  </div>
+                  <div id="search-popular">
+                     <button class="sp sp-popular"><span>#<i>에딕트</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>신형</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>A/S</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>로드</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>2020 FOIL</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>RANSOM</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>헬멧</i></span></button>
+                     <button class="sp sp-popular"><span>#<i>빕숏</i></span></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- 태블릿, 모바일 메뉴 버튼 -->
+         <button id="btn-menu"><i class="sp sp-gnb-open"></i></button>
+
+         <!-- 내비게이션 -->
+         <nav>
+            <ul class="global-header">
+               <li>
+                  <a href="#"><i class="sp sp-global-header"></i> OUR GLOBAL WEBSITE</a>
+               </li>
+            </ul>
+            <div class="util">
+               <ul class="sign-up">
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+               </ul>
+               <ul class="sitemap-link">
+                  <li class="sitemap"><button>사이트맵</button></li>
+               </ul>
+            </div>
+
+            <!-- 메뉴 바 - 데스크탑 -->
+            <ul class="gnb">
+               <li class="bg-long">
+                  <a href="#"><span>자전거</span></a>
+                  <div class="gnb-menu-wrap">
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">산악 MTB</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">SS</a></li>
+                           <li><a href="#">SCALE</a></li>
+                           <li><a href="#">GENIUS</a></li>
+                           <li><a href="#">RANSOM</a></li>
+                           <li><a href="#">ASPECT</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">로드 ROAD</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">FOIL</a></li>
+                           <li><a href="#">ADDICT</a></li>
+                           <li><a href="#">PLASMA</a></li>
+                           <li><a href="#">SPEEDSTER</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">전기 eRIDE</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">SS eRIDE</a></li>
+                           <li><a href="#">GENIUS eRIDE </a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">어반 Urban</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">SUB</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">아동 JR</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">SCALE JR</a></li>
+                           <li><a href="#">ROXTER</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </li>
+               <li class="bg-long">
+                  <a href="#"><span>용품</span></a>
+                  <div class="gnb-menu-wrap">
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">의류</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">상의</a></li>
+                           <li><a href="#">하의</a></li>
+                           <li><a href="#">캐주얼</a></li>
+                           <li><a href="#">액세서리</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">라이더 용품</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">헬멧</a></li>
+                           <li><a href="#">신발</a></li>
+                           <li><a href="#">선글래스/고글</a></li>
+                           <li><a href="#">가방</a></li>
+                           <li><a href="#">보호대</a></li>
+                           <li><a href="#">액세서리</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">여성용</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">자전거 의류</a></li>
+                           <li><a href="#">장갑</a></li>
+                           <li><a href="#">헬멧</a></li>
+                           <li><a href="#">신발</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">Syncros</a>
+                        </h3>
+                        <ul class="gnb-depth3">
+                           <li><a href="#">휠</a></li>
+                           <li><a href="#">컴퍼넌트</a></li>
+                           <li><a href="#">액세서리</a></li>
+                           <li><a href="#">가방</a></li>
+                           <li><a href="#">파트</a></li>
+                           <li class="showall"><a href="#">모두 보기</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </li>
+               <li class="bg-short">
+                  <a href="#"><span>고객지원</span></a>
+                  <div class="gnb-menu-wrap">
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">FAQ</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">1:1 문의</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">자전거 검색</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">정품 등록</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">제휴 문의</a>
+                        </h3>
+                     </div>
+                  </div>
+               </li>
+               <li class="bg-short">
+                  <a href="#"><span>커뮤니티</span></a>
+                  <div class="gnb-menu-wrap">
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">공지/보도</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">이벤트</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">팀/선수</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">자료실</a>
+                        </h3>
+                     </div>
+                  </div>
+               </li>
+               <li class="bg-short">
+                  <a href="#">
+                     <span>취급판매점</span>
+                     <i class="sp sp-newdealer"></i>
+                  </a>
+                  <div class="gnb-menu-wrap">
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">프리미엄 스토어</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">공식 판매점</a>
+                        </h3>
+                     </div>
+                     <div class="gnb-each-wrap">
+                        <h3 class="gnb-depth2">
+                           <a href="#">About 스캇노스아시아</a>
+                        </h3>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+
+            <!-- 메뉴 바 - 태블릿, 모바일 -->
+            <ul class="gnb-side">
+               <li class="gnb-side-each gnb-side-bike">
+                  <div class="gnb-side-depth1">
+                     <a href="#">
+                        <span>자전거</span><i class="fas fa-chevron-right"></i>
+                     </a>
+                  </div>
+                  <div class="gnb-side-sub">
+                     <div class="gnb-side-todepth1">
+                        <a href="#">
+                           <i class="fas fa-chevron-left"></i><span>자전거</span>
+                        </a>
+                     </div>
+                     <div class="gnb-side-depth2-wrap">
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>산악 MTB</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>산악 MTB</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">SS</a></li>
+                                 <li><a href="#">SCALE</a></li>
+                                 <li><a href="#">GENIUS</a></li>
+                                 <li><a href="#">RANSOM</a></li>
+                                 <li><a href="#">ASPECT</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>로드 ROAD</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>로드 ROAD</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">FOIL</a></li>
+                                 <li><a href="#">ADDICT</a></li>
+                                 <li><a href="#">PLASMA</a></li>
+                                 <li><a href="#">SPEEDSTER</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>전기 eRIDE</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>전기 eRIDE</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">SS eRIDE</a></li>
+                                 <li><a href="#">GENIUS eRIDE </a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>어반 Urban</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>어반 Urban</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">SUB</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>아동 JR</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>아동 JR</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">SCALE JR</a></li>
+                                 <li><a href="#">ROXTER</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="gnb-side-each gnb-side-equip">
+                  <div class="gnb-side-depth1">
+                     <a href="#">
+                        <span>용품</span><i class="fas fa-chevron-right"></i>
+                     </a>
+                  </div>
+                  <div class="gnb-side-sub">
+                     <div class="gnb-side-todepth1">
+                        <a href="#">
+                           <i class="fas fa-chevron-left"></i><span>용품</span>
+                        </a>
+                     </div>
+                     <div class="gnb-side-depth2-wrap">
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>의류</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>의류</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">상의</a></li>
+                                 <li><a href="#">하의</a></li>
+                                 <li><a href="#">캐주얼</a></li>
+                                 <li><a href="#">액세서리</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>라이더 용품</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>라이더 용품</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">헬멧</a></li>
+                                 <li><a href="#">신발</a></li>
+                                 <li><a href="#">선글래스/고글</a></li>
+                                 <li><a href="#">가방</a></li>
+                                 <li><a href="#">보호대</a></li>
+                                 <li><a href="#">액세서리</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>여성용</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>여성용</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">자전거 의류</a></li>
+                                 <li><a href="#">장갑</a></li>
+                                 <li><a href="#">헬멧</a></li>
+                                 <li><a href="#">신발</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#">
+                              <span>Syncros</span><i class="fas fa-chevron-right"></i>
+                           </a>
+                           <div class="gnb-side-depth3-wrap">
+                              <div class="gnb-side-todepth2">
+                                 <a href="#">
+                                    <i class="fas fa-chevron-left"></i><span>Syncros</span>
+                                 </a>
+                              </div>
+                              <ul class="gnb-side-depth3">
+                                 <li><a href="#">휠</a></li>
+                                 <li><a href="#">컴퍼넌트</a></li>
+                                 <li><a href="#">액세서리</a></li>
+                                 <li><a href="#">가방</a></li>
+                                 <li><a href="#">파트</a></li>
+                                 <li class="showall"><a href="#">모두 보기</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="gnb-side-each">
+                  <div class="gnb-side-depth1">
+                     <a href="#">
+                        <span>고객지원</span><i class="fas fa-chevron-right"></i>
+                     </a>
+                  </div>
+                  <div class="gnb-side-sub">
+                     <div class="gnb-side-todepth1">
+                        <a href="#">
+                           <i class="fas fa-chevron-left"></i><span>고객지원</span>
+                        </a>
+                     </div>
+                     <div class="gnb-side-depth2-wrap">
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>FAQ</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>1:1문의</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>자전거 검색</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>정품 등록</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>제휴 문의</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="gnb-side-each">
+                  <div class="gnb-side-depth1">
+                     <a href="#">
+                        <span>커뮤니티</span><i class="fas fa-chevron-right"></i>
+                     </a>
+                  </div>
+                  <div class="gnb-side-sub">
+                     <div class="gnb-side-todepth1">
+                        <a href="#">
+                           <i class="fas fa-chevron-left"></i><span>커뮤니티</span>
+                        </a>
+                     </div>
+                     <div class="gnb-side-depth2-wrap">
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>공지/보도</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>이벤트</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>팀/선수</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>자료실</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="gnb-side-each">
+                  <div class="gnb-side-depth1">
+                     <a href="#">
+                        <span>취급판매점</span><i class="fas fa-chevron-right"></i>
+                     </a>
+                  </div>
+                  <div class="gnb-side-sub">
+                     <div class="gnb-side-todepth1">
+                        <a href="#">
+                           <i class="fas fa-chevron-left"></i><span>취급판매점</span>
+                        </a>
+                     </div>
+                     <div class="gnb-side-depth2-wrap">
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>프리미엄 스토어</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>공식 판매점</span></a>
+                        </div>
+                        <div class="gnb-side-depth2">
+                           <a href="#"><span>About 스캇노스아시아</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="gnb-side-utils">
+                  <ul class="sign-up-side">
+                     <li><a href="#">로그인</a></li>
+                     <li><a href="#">회원가입</a></li>
+                  </ul>
+                  <ul class="global-header-side">
+                     <li>
+                        <a href="#">
+                           <i class="sp sp-global-header"></i> OUR GLOBAL WEBSITE
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </nav>
+      </div>
+      <!-- 데스크탑 메뉴바의 2~3depth가 펼쳐질 때 뒤에 깔리는 배경 -->
+      <div class="gnb-bg"></div>
+   </header>
+
+   <!-- section -->
+   <section>
+      <h2>section</h2>
+      <!-- 메인 슬라이드 -->
+      <article class="main-slide">
+         <div class="swiper-container">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <img src="img/main_slide_1_p.jpg" alt="" class="p">
+                  <img src="img/main_slide_1_m.jpg" alt="" class="m">
+                  <h2>
+                     TOUR OF BRITAIN<br>
+                     -<br>
+                     MATTEO TRENTIN TRIUMPHS ON STAGE TWO<br>
+                  </h2>
+                  <a href="#">자세히 보기</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="img/main_slide_2_p.jpg" alt="" class="p">
+                  <img src="img/main_slide_2_m.jpg" alt="" class="m">
+                  <h2>
+                     KATE COURTNEY<br>
+                     -<br>
+                     WEARS RAINBOW STRIPES<br>
+                  </h2>
+                  <a href="#">자세히 보기</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="img/main_slide_3_p.jpg" alt="" class="p">
+                  <img src="img/main_slide_3_m.jpg" alt="" class="m">
+                  <h2>
+                     SWEET DREAMS ARE MADE OF THIS.
+                  </h2>
+                  <a href="#">자세히 보기</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="img/main_slide_4_p.jpg" alt="" class="p">
+                  <img src="img/main_slide_4_m.jpg" alt="" class="m">
+                  <h2>
+                     SIMON YATES WINS TOUR DE FRANCE STAGE<br>
+                     -<br>
+                     ON ALL-NEW ADDICT RC<br>
+                  </h2>
+                  <a href="#">자세히 보기</a>
+               </div>
+               <div class="swiper-slide">
+                  <img src="img/main_slide_5_p.jpg" alt="" class="p">
+                  <img src="img/main_slide_5_m.jpg" alt="" class="m">
+                  <h2>
+                     RANSOM<br>
+                     -<br>
+                     FLOW STATE<br>
+                  </h2>
+                  <a href="#">자세히 보기</a>
+               </div>
+            </div>
+            <div class="slide-button prev"><i class="sp sp-slide-prev"></i></div>
+            <div class="slide-button next"><i class="sp sp-slide-next"></i></div>
+            <button id="play-state" class="fas fa-pause"></button>
+            <div class="swiper-pagination"></div>
+         </div>
+      </article>
+
+      <!-- MTB, ROAD 대표 모델 -->
+      <article class="flagship-wrap">
+         <div class="flagship container">
+            <div class="flagship-mtb">
+               <span class="flagship-bg"></span>
+               <h2>2020 SCALE</h2>
+               <p>
+                  우리의 스케일은 이미 역사적인 기록으로 남겨졌으며,<br>
+                  스케일 시리즈의 기본 구조는 현재까지 어느 제품보다도 빠르고<br>
+                  라이더에게 더욱 잘 맞는 지오메트리로 개선되어 왔습니다.<br>
+               </p>
+               <a href="#">자세히 보기</a>
+            </div>
+         </div>
+         <div class="flagship container">
+            <div class="flagship-road">
+               <span class="flagship-bg"></span>
+               <h2>2020 ADDICT</h2>
+               <p>
+                  경량은 물론 속도까지 붙잡은 신형 에딕트는<br>
+                  여러분이 필요로 하는 모든 경쟁에서 우위를 제공할 것입니다.<br>
+                  여러분이 사는 지역의 산에서 KOM을 차지하거나<br>
+                  크리테리움에서 누구보다도 빠르게 피니시할 수 있도록 말이죠.<br>
+               </p>
+               <a href="#">자세히 보기</a>
+            </div>
+         </div>
+      </article>
+
+      <!-- MTB, ROAD 대표 상품 -->
+      <article class="product-wrap">
+         <div class="product container">
+            <div class="product-intro intro-mtb">
+               <span class="product-bg"></span>
+               <a href="#">
+                  <h2 class="intro-title">산 악<br>M T B</h2>
+                  <p class="intro-text text-mtb">
+                     전 세계의 많은 정상급 선수들이 우리의 산악 자전거를<br>
+                     선택하였고, 그들은 월드, 올림픽 타이틀을<br>
+                     여러 차례 획득했습니다.<br>
+                     하지만 우리는 선수들 뿐만 아니라 모든 라이더를<br>
+                     위해서, 이러한 성공에 안주하지 않고<br>
+                     계속해서 세계 최고의 MTB를 개발하고 있습니다.
+                  </p>
+                  <span class="intro-dim"></span>
+               </a>
+            </div>
+            <div class="swiper-container">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/mtb_01.jpg" alt="2020 SS RC 900 SL AXS" title="2020 SS RC 900 SL AXS">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">SS RC 900 SL AXS</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">15,500,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/mtb_02.jpg" alt="2020 스케일 RC 900 WORLD CUP AXS" title="2020 스케일 RC 900 WORLD CUP AXS">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">스케일 RC 900 WORLD CUP AXS</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">8,900,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/mtb_03.jpg" alt="2020 지니어스 910" title="2020 지니어스 910">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">지니어스 910</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">7,000,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/mtb_04.jpg" alt="2020 랜섬 910" title="2020 랜섬 910">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">랜섬 910</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">7,200,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <a href="#">
+                        <img src="img/mtb_05.jpg" alt="2019 랜섬 900 TUNED" title="2019 랜섬 900 TUNED">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">랜섬 900 TUNED</p>
+                        <p class="product-model">2019</p>
+                        <p class="product-price">9,600,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <a href="#">
+                        <img src="img/mtb_06.jpg" alt="2019 스케일 RC 900 PRO" title="2019 스케일 RC 900 PRO">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">스케일 RC 900 PRO</p>
+                        <p class="product-model">2019</p>
+                        <p class="product-price">5,600,000</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="slide-button prev">
+                  <button><i class="sp sp-product-prev"></i></button>
+               </div>
+               <div class="slide-button next">
+                  <button><i class="sp sp-product-next"></i></button>
+               </div>
+               <div class="swiper-pagination"></div>
+            </div>
+         </div>
+         <div class="product container">
+            <div class="product-intro intro-road">
+               <span class="product-bg"></span>
+               <a href="#">
+                  <h2 class="intro-title">로 드<br>R O A D</h2>
+                  <p class="intro-text text-road">
+                     우리의 모든 로드 바이크들은 놀라울 만큼 정밀하게<br>
+                     디자인되어 있습니다. 세세한 부분까지 주의를<br>
+                     기울여서 차이를 만들고 여러분에게 최고의 사이클링<br>
+                     경험을 제공하기 위해서지요.<br>
+                     우리의 폭 넓은 제품군에서 당신은 최고로<br>
+                     훌륭한 파트너를 찾을 수 있을 것입니다.
+                  </p>
+                  <span class="intro-dim"></span>
+               </a>
+            </div>
+            <div class="swiper-container">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/road_01.jpg" alt="2020 포일 프리미엄 Di2" title="2020 포일 프리미엄 Di2">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">포일 프리미엄 Di2</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">12,000,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/road_02.jpg" alt="2020 포일 10" title="2020 포일 10">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">포일 10</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">7,300,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/road_03.jpg" alt="2020 에딕트 RC 10 Red" title="2020 에딕트 RC 10 Red">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">에딕트 RC 10 Red</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">6,700,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="label-area">
+                        <span class="label-new">NEW</span>
+                     </div>
+                     <a href="#">
+                        <img src="img/road_04.jpg" alt="2020 에딕트 RC 30 Blue" title="2020 에딕트 RC 30 Blue">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">에딕트 RC 30 Blue</p>
+                        <p class="product-model">2020</p>
+                        <p class="product-price">4,850,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <a href="#">
+                        <img src="img/road_05.jpg" alt="2019 에딕트 Gravel 30 DISC" title="2019 에딕트 Gravel 30 DISC">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">에딕트 Gravel 30 DISC</p>
+                        <p class="product-model">2019</p>
+                        <p class="product-price">3,650,000원</p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <a href="#">
+                        <img src="img/road_06.jpg" alt="2019 스피드스터 10" title="2019 스피드스터 10">
+                     </a>
+                     <div class="intro-text-group">
+                        <p class="product-name">스피드스터 10</p>
+                        <p class="product-model">2019</p>
+                        <p class="product-price">1,200,000</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="slide-button prev">
+                  <button><i class="sp sp-product-prev"></i></button>
+               </div>
+               <div class="slide-button next">
+                  <button><i class="sp sp-product-next"></i></button>
+               </div>
+               <div class="swiper-pagination"></div>
+            </div>
+         </div>
+      </article>
+
+      <!-- 프로모션 - 유튜브 영상 -->
+      <article class="promo-movie-wrap">
+         <span class="promo-movie-bg"></span>
+         <div class="promo-movie container">
+            <h2>SCOTT SPORTS, #NOSHORTCUTS</h2>
+            <div class="iframe-wrap">
+               <iframe src="https://www.youtube.com/embed/jffyydClUts" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+         </div>
+      </article>
+
+      <!-- 자회사 & 기술력 홍보 -->
+      <article class="syncntech-wrap">
+         <h2 class="syncntech-intro">THE WORLD OF SCOTT BIKE</h2>
+         <p class="syncntech-intro">
+            경량과 강성을 모두 붙잡은 카본 기술과<br>
+            싱크로스의 뛰어난 컴포넌트, <br>
+            그리고 스캇의 철학으로 최고의 자전거가 탄생합니다.<br>
+         </p>
+         <div class="syncntech container">
+            <div class="syncros-wrap">
+               <div class="syncros z-index">
+                  <span class="syncros-bg s-ani"></span>
+                  <h3 class="s-ani">싱크로스 Syncros</h3>
+                  <p class="s-ani">
+                     싱크로스는 SCOTT과 함께 하는 컴퍼넌트 제조 브랜드입니다.<br>
+                     보다 정밀한 바이크 컴퍼넌트를 통해<br>
+                     여러분의 자전거를 향상시켜 보십시오.
+                  </p>
+                  <i class="sp sp-syncros s-ani"></i>
+                  <a href="#" class="s-ani">자세히 보기</a>
+               </div>
+            </div>
+            <div class="carbonexp-wrap">
+               <div class="carbonexp z-index">
+                  <span class="carbonexp-bg c-ani"></span>
+                  <i class="sp sp-carbon c-ani"></i>
+                  <a href="#" class="c-ani">자세히 보기</a>
+                  <p class="c-ani">
+                     SCOTT의 엔지니어들은 카본 생산 과정에서의 엄격한 표준 관리,<br>
+                     전문 제조기술의 개선과 발전을 위해서 독자적인 테스트 연구실을 갖추고<br>
+                     대학 연구기관과 공동으로 지속적으로 개발작업을 하고 있습니다.
+                  </p>
+               </div>
+            </div>
+            <div class="innotech-wrap">
+               <div class="innotech z-index">
+                  <span class="innotech-bg i-ani"></span>
+                  <h3 class="i-ani">- INNOVATION</h3>
+                  <h3 class="i-ani">- TECHNOLOGY</h3>
+                  <h3 class="i-ani">- DESIGN</h3>
+                  <p class="i-ani">
+                     "NO SHORTCUTS"는 SCOTT이<br>
+                     올바른 길로 나아가기 위한 방침을<br>
+                     정의하는 말입니다.
+                  </p>
+                  <p class="i-ani">
+                     이것은 우리가 어떻게 스포츠의<br>
+                     진정한 아름다움을 디자인하고<br>
+                     표현하는지를 나타내고 있습니다.<br>
+                  </p>
+                  <a href="#" class="i-ani">자세히 보기</a>
+               </div>
+            </div>
+         </div>
+      </article>
+
+      <!-- 프로모션 - 패럴랙스 -->
+      <article class="promo-parallax-wrap">
+         <span class="promo-parallax-bg"></span>
+         <div class="promo-parallax container">
+            <h2>MOMENTS OF Tour de France</h2>
+            <p>
+               투르 드 프랑스에서 SCOTT이 후원하는 팀과 선수들의 여정을<br>
+               여러분과 사진으로 함께합니다.
+            </p>
+            <i class="sp sp-tdf"></i>
+            <a href="#">자세히 보기</a>
+         </div>
+      </article>
+
+      <!-- 공지사항, 대리점 검색 -->
+      <article class="noticenstore-wrap">
+         <div class="noticenstore container">
+            <div class="notice">
+               <h2>공지/보도</h2>
+               <div class="notice-list-wrap">
+                  <ul class="notice-list">
+                     <li class="index-0 current">
+                        <span class="notice-label">보도</span>
+                        <a href="#"><p>스캇스포츠, 새로운 본사 공개</p></a>
+                        <span class="notice-date">2019.06.18</span>
+                     </li>
+                     <li class="index-1">
+                        <span class="notice-label">공지</span>
+                        <a href="#"><p>2011년식 프레임의 워런티가 2016년 12월 31일부로 종료</p></a>
+                        <span class="notice-date">2017.02.07</span>
+                     </li>
+                     <li class="index-2">
+                        <span class="notice-label">공지</span>
+                        <a href="#"><p>A/S관련 스몰파트 가격인하 / 2017.01.31</p></a>
+                        <span class="notice-date">2017.01.31</span>
+                     </li>
+                     <li class="index-3">
+                        <span class="notice-label">공지</span>
+                        <a href="#"><p>[ADDICT]2016년식 FL1.0 OFFSET 27.2MM SEATPOSTS 자발적 리콜</p></a>
+                        <span class="notice-date">2016.06.07</span>
+                     </li>
+                     <li class="index-4">
+                        <span class="notice-label">공지</span>
+                        <a href="#"><p>2016.04.19 시스템 점검이 있습니다.</p></a>
+                        <span class="notice-date">2016.04.19</span>
+                     </li>
+                     <li class="index-5">
+                        <span class="notice-label">공지</span>
+                        <a href="#"><p>2010년식 프레임의 워런티가 2015년 12월 31일부로 종료</p></a>
+                        <span class="notice-date">2016.02.23</span>
+                     </li>
+                  </ul>
+                  <div class="btn-group">
+                     <button id="down"><i class="fas fa-caret-down"></i></button>
+                     <button id="up"><i class="fas fa-caret-up"></i></button>
+                  </div>
+               </div>
+               <a href="#" class="more">더 보기</a>
+            </div>
+            <div class="store">
+               <span class="store-bg sp sp-bg-map"></span>
+               <h2>대리점 검색</h2>
+               <form class="form-store">
+                  <input type="text" placeholder="지역명을 입력해 주세요" onkeyup="keyWordSearch(this)">
+                  <button id="search-store"><i class="sp sp-search-store"></i></button>
+                  <div class="keyword-search">
+                     <div class="scrollbar-inner">
+                        <ul id="keyword-search-result"></ul>
+                     </div>
+                  </div>
+               </form>
+               <div class="select-group">
+                  <select id="district-upper">
+                     <option value="광역지방">특별·광역시/도</option>
+                     <option value="서울특별시">서울특별시</option>
+                     <option value="부산광역시">부산광역시</option>
+                     <option value="인천광역시">인천광역시</option>
+                     <option value="대구광역시">대구광역시</option>
+                     <option value="광주광역시">광주광역시</option>
+                     <option value="대전광역시">대전광역시</option>
+                     <option value="울산광역시">울산광역시</option>
+                     <option value="세종특별자치시">세종특별자치시</option>
+                     <option value="경기도">경기도</option>
+                     <option value="강원도">강원도</option>
+                     <option value="충청북도">충청북도</option>
+                     <option value="충청남도">충청남도</option>
+                     <option value="경상북도">경상북도</option>
+                     <option value="경상남도">경상남도</option>
+                     <option value="전라북도">전라북도</option>
+                     <option value="전라남도">전라남도</option>
+                     <option value="제주특별자치도">제주특별자치도</option>
+                 </select>
+                 <select id="district-result">
+                     <option value="">하위 구역</option>
+                 </select>
+               </div>
+               <p>Find dealers & stores in your village</p>
+               <a href='#' class="go">
+                  <div class="store-go-wrap">
+                     <span>GO</span>
+                     <i class="sp sp-location"></i>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </article>
+   </section>
+
+   <!-- 푸터 -->
+   <footer>
+      <div class="footer-contents container">
+         <div class="footer-upper-wrap">
+            <div class="sns-footer">
+               <h2>FOLLOW US</h2>
+               <div class="sns-wrap">
+                  <a href="#" class="btn-instagram" data-content="인스타그램">
+                     <i class="sp sp-instagram"></i>
+                  </a>
+                  <a href="#" class="btn-facebook" data-content="페이스북">
+                     <i class="sp sp-facebook"></i>
+                  </a>
+                  <a href="#" class="btn-blog" data-content="네이버 블로그">
+                     <i class="sp sp-blog"></i>
+                  </a>
+                  <div class="sns-tooltip tip-instagram">
+                     <i class="sp sp-tooltip-instagram"></i>
+                  </div>
+                  <div class="sns-tooltip tip-facebook">
+                     <i class="sp sp-tooltip-facebook"></i>
+                  </div>
+                  <div class="sns-tooltip tip-blog">
+                     <i class="sp sp-tooltip-blog"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="nav-footer-wrap">
+               <ul class="nav-footer">
+                  <li>
+                     <div class="sub-name"><span>FEATURES</span><i class="fas fa-chevron-down"></i></div>
+                     <ul class="sub">
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">팀/선수</a></li>
+                        <li><a href="#">THE CARBON EXPERTS</a></li>
+                        <li><a href="#">TECH/DESIGN</a></li>
+                        <li><a href="#">자료실</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="sub-name"><span>SUPPORT</span><i class="fas fa-chevron-down"></i></div>
+                     <ul class="sub">
+                        <li><a href="#">자전거 검색</a></li>
+                        <li><a href="#">취급 판매점</a></li>
+                        <li><a href="#">고객 지원</a></li>
+                        <li><a href="#">정품 등록</a></li>
+                        <li><a href="#">제휴 문의</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="sub-name"><span>ABOUT US</span><i class="fas fa-chevron-down"></i></div>
+                     <ul class="sub">
+                        <li><a href="#">ABOUT SCOTT</a></li>
+                        <li><a href="#">ABOUT 스캇노스아시아</a></li>
+                        <li><a href="#">공지/보도</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="footer-under-wrap">
+            <h2 class="footer-logo">
+               <i class="sp sp-logo-footer"><span class="blind">SCOTT 로고</span></i>
+            </h2>
+            <address>
+               <p class="info-address">
+                  (주)스캇노스아시아 ｜ 서울시 성북구 오패산로 37 영원빌딩 ｜ 대표 : 성기학
+               </p>
+               <p class="info-tel">
+                  TEL : 1544-3603  FAX : 02-918-6606
+               </p>
+               <p class="info-email">
+                  E-MAIL : info@scott-korea.com
+               </p>
+               <p class="info-serial">
+                  사업자등록번호 : 129-86-63732  정보관리책임자 : 서영노
+               </p>
+               <p class="info-copy">
+                  COPYRIGHT SCOTT NORTH ASIA LTD. ALL RIGHTS RESERVED
+               </p>
+               <p class="info-ps1">
+                  ※ 본 사이트는 개인적인 용도로 만들어졌으며 
+               </p>
+               <p class="info-ps2">
+                  영리적인 목적으로 사용되지 않음을 알려드립니다.
+               </p>
+            </address>
+            <button id="btn-top"><i class="sp sp-btntop-base"></i></button>
+         </div>
+      </div>
+   </footer>
+
+   <!-- 퀵 메뉴 -->
+   <aside class="quick-menu">
+      <button class="quick-switch">
+         <i class="sp sp-quick-switch">
+            <span><i class="sp sp-quick-arrow-switch"></i></span>
+         </i>
+      </button>
+      <ul class="quick-menu-buttons">
+         <li class="quick-recent-wrap">
+            <button class="quick-recent">
+               <i class="sp sp-quick-recent"></i>
+               <span class="quick-hover qh-recent">
+                  <span>최근 본<br>상품</span>
+               </span>
+            </button>
+         </li>
+         <li class="quick-service-wrap">
+            <a href="#" class="quick-service">
+               <i class="sp sp-quick-service"></i>
+               <span class="quick-hover qh-service">
+                  <span>고객<br>지원</span>
+               </span>
+            </a>
+         </li>
+         <li class="quick-store-wrap">
+            <a href="#" class="quick-store">
+               <i class="sp sp-quick-store"></i>
+               <span class="quick-hover qh-store">
+                  <span>취급<br>판매점</span>
+               </span>
+            </a>
+         </li>
+         <li class="quick-sign-wrap">
+            <a href="#" class="quick-sign">
+               <i class="sp sp-quick-sign"></i>
+               <span class="quick-hover qh-sign">
+                  <span>정품<br>등록</span>
+               </span>
+            </a>
+         </li>
+         <li class="quick-top-wrap">
+            <button id="btn-top-quick">
+               <i class="sp sp-quick-top"></i>
+            </button>
+         </li>
+      </ul>
+      <div class="quick-menu-recents-container">
+         <p class="recents-pagination">
+            상품 목록<br>
+            ( <span class="r-index-c">1</span>
+               / 
+            <span class="r-index-t">4</span> )
+         </p>
+         <div class="quick-menu-recents-wrap">
+            <ul class="quick-menu-recents">
+               <li data-index="0">
+                  <a href="#">
+                     <img src="img/mtb_01.jpg" alt="2020 SS RC 900 SL AXS" title="2020 SS RC 900 SL AXS / 산악 / 15,500,000원">
+                  </a>
+               </li>
+               <li data-index="1">
+                  <a href="#">
+                     <img src="img/road_01.jpg" alt="2020 포일 프리미엄 Di2" title="2020 포일 프리미엄 Di2 / 로드 / 12,000,000원">
+                  </a>
+               </li>
+               <li data-index="2">
+                  <a href="#">
+                     <img src="img/road_05.jpg" alt="2019 에딕트 Gravel 30 DISC" title="2019 에딕트 Gravel 30 DISC / 로드 / 3,650,000원">
+                  </a>
+               </li>
+               <li data-index="3">
+                  <a href="#">
+                     <img src="img/mtb_06.jpg" alt="2019 스케일 RC 900 PRO" title="2019 스케일 RC 900 PRO / 산악 / 5,600,000원">
+                  </a>
+               </li>
+            </ul>
+         </div>
+         <button id="arrow-prev-quick">
+            <i class="sp sp-quick-arrow-prev"></i>
+         </button>
+         <button id="arrow-next-quick">
+            <i class="sp sp-quick-arrow-next"></i>
+         </button>
+      </div>
+   </aside>
+
+   <!-- 공지 팝업 -->
+   <div class="popup-notice">
+      <button class="sp sp-close-box"></button>
+      <a href="#"><img src="img/popup_notice.jpg" alt="공지팝업"></a>
+      <div class="no-more-today">
+         <span>오늘 하루 동안 열지 않습니다.</span>
+         <input type="checkbox">
+      </div>
+   </div>
+
+   <!-- 사이트맵 팝업 -->
+   <div class="popup-sitemap-wrap">
+      <!-- 사이트맵 팝업 외부 배경 -->
+      <div class="sitemap-bg-dark"></div>
+      <div class="popup-sitemap">
+         <div class="popup-sitemap-contents scrollbar-inner">
+            <div class="popup-sitemap-rows">
+               <ul class="popup-sitemap-depth1">
+                  <li>
+                     <a href="#">
+                        <i class="sp sp-sitemap-symbol"></i>
+                        <span>자전거</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="popup-sitemap-depth2n3">
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">산악 MTB</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">SS</a></li>
+                        <li><a href="#">SCALE</a></li>
+                        <li><a href="#">GENIUS</a></li>
+                        <li><a href="#">RANSOM</a></li>
+                        <li><a href="#">ASPECT</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">로드 ROAD</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">FOIL</a></li>
+                        <li><a href="#">ADDICT</a></li>
+                        <li><a href="#">PLASMA</a></li>
+                        <li><a href="#">SPEEDSTER</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">전기 eRIDE</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">SS eRIDE</a></li>
+                        <li><a href="#">GENIUS eRIDE</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">어반 Urban</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">SUB</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">아동 JR</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">SCALE JR</a></li>
+                        <li><a href="#">ROXTER</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+            <div class="popup-sitemap-rows">
+               <ul class="popup-sitemap-depth1">
+                  <li>
+                     <a href="#">
+                        <i class="sp sp-sitemap-symbol"></i>
+                        <span>용품</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="popup-sitemap-depth2n3">
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">의류</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">상의</a></li>
+                        <li><a href="#">하의</a></li>
+                        <li><a href="#">캐주얼</a></li>
+                        <li><a href="#">액세서리</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">라이더 용품</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">헬멧</a></li>
+                        <li><a href="#">신발</a></li>
+                        <li><a href="#">선글래스/고글</a></li>
+                        <li><a href="#">가방</a></li>
+                        <li><a href="#">보호대</a></li>
+                        <li><a href="#">액세서리</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">여성용</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">자전거 의류</a></li>
+                        <li><a href="#">장갑</a></li>
+                        <li><a href="#">헬멧</a></li>
+                        <li><a href="#">신발</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">Syncros</a>
+                     </h3>
+                     <ul class="popup-sitemap-depth3">
+                        <li><a href="#">휠</a></li>
+                        <li><a href="#">컴퍼넌트</a></li>
+                        <li><a href="#">액세서리</a></li>
+                        <li><a href="#">가방</a></li>
+                        <li><a href="#">파트</a></li>
+                     </ul>
+                  </li>
+                  <li class="popup-sitemap-columns"></li>
+               </ul>
+            </div>
+            <div class="popup-sitemap-rows">
+               <ul class="popup-sitemap-depth1">
+                  <li>
+                     <a href="#">
+                        <i class="sp sp-sitemap-symbol"></i>
+                        <span>고객지원</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="popup-sitemap-depth2n3">
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">FAQ</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">1:1 문의</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">자전거 검색</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">정품 등록</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">제휴 문의</a>
+                     </h3>
+                  </li>
+               </ul>
+            </div>
+            <div class="popup-sitemap-rows">
+               <ul class="popup-sitemap-depth1">
+                  <li>
+                     <a href="#">
+                        <i class="sp sp-sitemap-symbol"></i>
+                        <span>커뮤니티</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="popup-sitemap-depth2n3">
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">공지/보도</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">이벤트</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">팀/선수</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">자료실</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns"></li>
+               </ul>
+            </div>
+            <div class="popup-sitemap-rows">
+               <ul class="popup-sitemap-depth1">
+                  <li>
+                     <a href="#">
+                        <i class="sp sp-sitemap-symbol"></i>
+                        <span>취급판매점</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="popup-sitemap-depth2n3">
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">프리미엄<br>스토어</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">공식 판매점</a>
+                     </h3>
+                  </li>
+                  <li class="popup-sitemap-columns">
+                     <h3 class="popup-sitemap-depth2">
+                        <a href="#">About<br>스캇노스아시아</a>
+                     </h3>
+                  </li>
+               </ul>
+            </div>
+            <i class="sp sp-close-box"><button></button></i>
+         </div>
+         <div class="popup-sitemap-bottom">
+            <div class="popup-sitemap-bottom-logo">
+               <a href="#" class="sp sp-logo-sitemap">
+                  <span class="blind">스캇노스아시아</span>
+               </a>
+            </div>
+            <div class="popup-sitemap-bottom-contents">
+               <ul class="popup-sitemap-bottom-support">
+                  <li><a href="#">회사 소개</a></li>
+                  <li><a href="#">제품 문의</a></li>
+                  <li><a href="#">대리점 검색</a></li>
+               </ul>
+               <ul class="popup-sitemap-bottom-util">
+                  <li><a href="#"><i class="sp sp-global-sitemap"></i> OUR GLOBAL WEBSITE</a></li>
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- PC 내비게이션 밑에 깔릴 배경 -->
+   <div class="gnb-bg-dark"></div>
+
+   <!-- 대리점 검색 - 키워드 검색 자동완성 -->
+   <!-- 카카오 APP 키 : d80dd21265f92bf7d3efc39e981a0443 -->
+   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d80dd21265f92bf7d3efc39e981a0443&libraries=services"></script>
+</body>
+</html>
