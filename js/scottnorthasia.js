@@ -135,7 +135,7 @@ $(function(){
    /* 화면의 사이즈가 변경될 때 gnb의 상태를 초기화하기 */
    $(window).resize(function(){
       var windowWidth=$(window).width();
-      if(windowWidth <= 992){
+      if(windowWidth <= 975){
          $('.gnb > li > a span, .gnb-menu-wrap').removeClass('active');
          $('.gnb-bg.active-long').removeClass('active-long');
          $('.gnb-bg.active-short').removeClass('active-short');
