@@ -934,7 +934,7 @@ $(function(){
    $(window).resize(function(){
       var windowWidth=$(window).width();
       if(windowWidth <= 992){
-         $('.popup-sitemap, .sitemap-bg-dark').hide();
+         $('.popup-sitemap-wrap').hide();
          $('.popup-sitemap-wrap').removeClass('fade-in');
          $('body').removeClass('sitemap-on');
       }

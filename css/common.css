@@ -2124,6 +2124,7 @@ footer{background: #000;}
 /* 사이트맵이 열렸을 때 */
 .sitemap-on{overflow: hidden;}
 .popup-sitemap-wrap.fade-in{
+   display: block;
    overflow-x: hidden;
    overflow-y: scroll;
 }
