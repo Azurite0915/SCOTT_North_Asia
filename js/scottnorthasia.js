@@ -296,7 +296,7 @@ $(function(){
          clickable: false,
       },
       effect: 'slide',
-      loop:true,
+      loop: true,
       breakpoints: {
          360: {
             slidesPerView: 1.2,
@@ -637,7 +637,7 @@ $(function(){
    $(window).resize(function(){
       $('.nav-footer > li').removeClass('open');
       var windowWidth=$(window).width();
-      if(windowWidth < 751){
+      if(windowWidth < 750){
          $('.nav-footer .sub').hide();
       }else{
          $('.nav-footer .sub').show();
