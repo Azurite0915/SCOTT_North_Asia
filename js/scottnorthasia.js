@@ -1,13 +1,13 @@
 $(function(){
    /* IE에서 forEach문을 자체적으로 받아들이지 못하므로 스크립트에서 추가 */
    if(!Array.prototype.forEach){
-      Array.prototype.forEach = function (fn, scope) {  
-         for (var i = 0, len = this.length; i < len; ++i) {
+      Array.prototype.forEach = function(fn, scope){  
+         for(var i = 0, len = this.length; i < len; ++i){
             fn.call(scope || this, this[i], i, this);
          }
       }
    } 
-      
+
    /* 
       [ 특정 화면 사이즈 수치 조정에 대해 ]
       조건에서 지정한 사이즈보다 더 넓은 규격부터 브라우저에서 인식하는 현상을 고려,
