@@ -2105,7 +2105,7 @@ footer{background: #000;}
    vertical-align: middle;
 }
 
-/* 사이트맵 스크롤바(창 크기 축소 시 등장) */
+/* 사이트맵 스크롤바(창 크기가 줄어들면 등장) */
 .popup-sitemap-contents.scrollbar-inner > .scroll-element .scroll-element_track {
    background-color: #d6d6d6;
 }
