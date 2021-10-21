@@ -18,7 +18,6 @@ $(function(){
    
    /* 내비게이션 ========================================== */
    /* gnb(PC) */
-   // 1-1. click으로 작동할 경우
    $('.gnb > li > a').click(function(e){
       e.preventDefault();
       if($(this).find('span').hasClass('active')){
@@ -59,29 +58,6 @@ $(function(){
          $('.gnb-bg').removeClass('active-short');
       }
    })
-   // 1-2.hover로 작동할 경우(불완전 therefore 사용 않음)
-   // $('.gnb > li > a').on('mouseenter', function(e){
-   //    e.preventDefault();
-   //    $('.gnb-menu-wrap').removeClass('active');
-   //    $('.gnb > li > a span').removeClass('active');
-   //    $(this).find('span').addClass('active');
-   //    $(this).next().addClass('active');
-   //    if($(this).parent().hasClass('bg-long')){
-   //       $('.gnb-bg').removeClass('active-long');
-   //       $('.gnb-bg').removeClass('active-short');
-   //       $('.gnb-bg').addClass('active-long');
-   //    }else if($(this).parent().hasClass('bg-short')){
-   //       $('.gnb-bg').removeClass('active-long');
-   //       $('.gnb-bg').removeClass('active-short');
-   //       $('.gnb-bg').addClass('active-short');
-   //    }
-   // });
-   // $('header').on('mouseleave', function(e){
-   //    e.preventDefault();
-   //    $('.gnb-menu-wrap, .gnb > li > a span').removeClass('active');
-   //    $('.gnb-bg').removeClass('active-long');
-   //    $('.gnb-bg').removeClass('active-short');
-   // })
    
    /* gnb-side(태블릿, 모바일) */
    // 1. 내비게이션 여닫기(초기: 1depth) & 배경 등장 & 하부 영역 우측으로 이동
@@ -163,17 +139,6 @@ $(function(){
          $('body').removeClass('scroll');
       }
       lastScrollTop = state;
-      // var scrollStart=$('header').offset().top+1;
-      // if(state > scrollStart){
-      //    if(state > lastScrollTop){         
-      //       //스크롤을 내릴 때
-      //       $('body').addClass('scroll');
-      //    }else{                  
-      //       //스크롤을 올릴 때
-      //       $('body').removeClass('scroll');
-      //    }
-      //    lastScrollTop = state;
-      // }
 
       // 2. flagship 소개문 & 버튼
       var scrollTop=$(window).scrollTop();
@@ -473,42 +438,8 @@ $(function(){
       })
    }
 
-   /* 아래/위 버튼으로 수동 롤링할 경우 */
-   // $(window).resize(function(){
-   //    $('.btn-group button').off('click');
-   //    var windowWidth=$(window).width();
-   //    if(windowWidth <= 767){
-   //       // 1. 리스트를 움직이는 함수
-   //       function move(){
-   //          $('.notice-list').stop(true).animate({
-   //             'margin-top':-30
-   //          },function(){
-   //             $('.notice-list li').first().appendTo('.notice-list');
-   //             $('.notice-list').css('margin-top', 0);
-   //          })
-   //       }
-   
-   //       // 2. 버튼을 눌렀을 때 해당 방향으로 리스트를 하나씩 이동
-   //       $('.btn-group button').on('click',function(){
-   //          if($(this).attr('id')=='down'){
-   //             move();
-   //          }else{
-   //             $('.notice-list').css('margin-top', -30);
-   //             $('.notice-list li').last().prependTo('.notice-list');
-   //             $('.notice-list').stop(true).animate({'margin-top': 0})
-   //          }
-   //       })
-   //    }else if(windowWidth > 767){
-   //       // 3. 모바일 이외일 때에 리스트 순서 원상복귀
-   //       while($('.notice-list li:first-child .notice-date').text() !== '2019.06.18'){
-   //          $('.notice-list li:first-child').appendTo('.notice-list');
-   //       }
-   //    }
-   // })
-
 
    /* 대리점 검색 입력창 리스트(document 외부) ========================================== */
-   // 1. 리스트를 클릭해서 입력 창에 텍스트 띄우기 & 리스트 지움
    $('#keyword-search-result').on('click', 'li', function(e){
       e.preventDefault();
       var address=$(this).find('.key-search-address').text();
@@ -516,9 +447,6 @@ $(function(){
       $('.form-store input').val(address+' '+place);
       $('#keyword-search-result li').remove();
    });
-
-   // 2. 지역 리스트에 스크롤 바 추가
-   // $('.keyword-search .scrollbar-inner').scrollbar();
 
 
    /* 대리점 검색 셀렉트 카테고리 ========================================== */
@@ -535,11 +463,6 @@ $(function(){
             // console.log(Object.keys(obj)[0]);   
             $('#district-under').append('<option value="'+Object.keys(obj)[0]+'">'+Object.keys(obj)[0]+'</option>');   
          });
-         // for (const i in data) {
-         //    for (const key in data[i]) {
-         //       $('#district-under').append('<option>'+key+'</option>');               
-         //    }
-         // }
       },
       //로드 실패 시
       error:function(jqXHR, textStatus, errorThrown){
@@ -562,73 +485,6 @@ $(function(){
          }  
       });
    })
-
-   /* js 내부에 직접 데이터를 작성하는 경우 */
-   // var district={
-   //    광역지방:[
-   //       "하위 구역"
-   //    ],
-   //    서울특별시:[
-   //       "종로구", "중구", "용산구", "성동구", "광진구", "동대문구", "중랑구", "성북구", "강북구", "도봉구", "노원구", "은평구", "서대문구", "마포구", "양천구", "강서구", "구로구", "금천구", "영등포구", "동작구", "관악구", "서초구", "강남구", "송파구", "강동구"
-   //    ],
-   //    부산광역시:[
-   //       "중구", "서구", "동구", "영도구", "부산진구", "동래구", "남구", "북구", "강서구", "해운대구", "사하구", "금정구", "연제구", "수영구", "사상구", "기장군"
-   //    ],
-   //    인천광역시:[
-   //       "중구", "동구", "남구", "연수구", "남동구", "부평구", "계양구", "서구", "강화군", "옹진군"
-   //    ],
-   //    대구광역시:[
-   //       "중구", "동구", "서구", "남구", "북구", "수성구", "달서구", "달성군"
-   //    ],
-   //    광주광역시:[
-   //       "동구", "서구", "남구", "북구", "광산구"
-   //    ],
-   //    대전광역시:[
-   //       "동구", "중구", "서구", "유성구", "대덕구"
-   //    ],
-   //    울산광역시:[
-   //       "중구", "남구", "동구", "북구", "울주군"
-   //    ],
-   //    세종특별자치시:[
-   //       "--------------------"
-   //    ],
-   //    경기도:[
-   //       "가평군", "고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "양평군", "여주시", "연천군", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시"
-   //    ],
-   //    강원도:[
-   //       "원주시", "춘천시", "강릉시", "동해시", "속초시", "삼척시", "홍천군", "태백시", "철원군", "횡성군", "평창군", "영월군", "정선군", "인제군", "고성군", "양양군", "화천군", "양구군"
-   //    ],
-   //    충청북도:[
-   //       "청주시", "충주시", "제천시", "보은군", "옥천군", "영동군", "증평군", "진천군", "괴산군", "음성군", "단양군"
-   //    ],
-   //    충청남도:[
-   //       "천안시", "공주시", "보령시", "아산시", "서산시", "논산시", "계룡시", "당진시", "금산군", "부여군", "서천군", "청양군", "홍성군", "예산군", "태안군"
-   //    ],
-   //    경상북도:[
-   //       "포항시", "경주시", "김천시", "안동시", "구미시", "영주시", "영천시", "상주시", "문경시", "경산시", "군위군", "의성군", "청송군", "영양군", "영덕군", "청도군", "고령군", "성주군", "칠곡군", "예천군", "봉화군", "울진군", "울릉군"
-   //    ],
-   //    경상남도:[
-   //       "창원시", "김해시", "진주시", "양산시", "거제시", "통영시", "사천시", "밀양시", "함안군", "거창군", "창녕군", "고성군", "하동군", "합천군", "남해군", "함양군", "산청군", "의령군"
-   //    ],
-   //    전라북도:[
-   //       "전주시", "익산시", "군산시", "정읍시", "완주군", "김제시", "남원시", "고창군", "부안군", "임실군", "순창군", "진안군", "장수군", "무주군"
-   //    ],
-   //    전라남도:[
-   //       "여수시", "순천시", "목포시", "광양시", "나주시", "무안군", "해남군", "고흥군", "화순군", "영암군", "영광군", "완도군", "담양군", "장성군", "보성군", "신안군", "장흥군", "강진군", "함평군", "진도군", "곡성군", "구례군"
-   //    ],
-   //    제주특별자치도:[
-   //       "제주시", "서귀포시"
-   //    ]
-   // }
-   // $('#district-upper').change(function(){
-   //    $('#district-result').empty();
-   //    var key=$(this).val();
-   //    for(let index = 0; index < district[key].length; index++){
-   //       $('#district-result').append('<option value="'+index+'">'
-   //       +district[key][index]+'</option>');
-   //    }
-   // })
-   // $('#district-upper').trigger('change');
 
 
    /* footer ========================================== */
@@ -884,7 +740,6 @@ $(function(){
    }
 
    // 4. 체크박스를 클릭해서 하루 동안 팝업을 끌 수 있도록 함
-   //참고 - https://mcatcher.github.io/2018/01/25/cookie.html
    $(".no-more-today input").click(function(){
       setCookieMobile("todayCookie","done",1);
       $(".popup-notice").hide();
